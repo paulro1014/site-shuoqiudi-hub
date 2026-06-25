@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>世界杯资讯与指南 · 日常查询参考</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f0f2f5;
+            color: #1e2a3a;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .page {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* ====== Hero ====== */
+        .hero {
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            padding: 3.5rem 2.5rem;
+            margin-bottom: 2.8rem;
+            border: 1px solid #e6eaef;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #0b1c2e;
+            margin-bottom: 1rem;
+        }
+
+        .hero .sub {
+            font-size: 1.15rem;
+            color: #4a5b6f;
+            max-width: 680px;
+            margin: 0 auto 1.2rem;
+        }
+
+        .hero .tagline {
+            display: inline-block;
+            background: #eef2f7;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.9rem;
+            color: #2f4056;
+            border: 1px solid #dce2eb;
+        }
+
+        /* ====== 卡片通用 ====== */
+        .card {
+            background: #ffffff;
+            border-radius: 24px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+            padding: 2rem 2.2rem;
+            border: 1px solid #e2e8f0;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            color: #132433;
+            letter-spacing: -0.01em;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2.8rem;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 2.8rem;
+        }
+
+        /* ====== 优势/特点卡片 ====== */
+        .feature-item h3 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #1f3246;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-item p {
+            color: #3f536b;
+            font-size: 0.95rem;
+        }
+
+        .feature-item .icon-placeholder {
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+            display: inline-block;
+        }
+
+        /* ====== 说明区 ====== */
+        .explain {
+            margin-bottom: 2.8rem;
+        }
+
+        .explain p {
+            margin-bottom: 1rem;
+            color: #2a3c50;
+            font-size: 1rem;
+        }
+
+        .explain p:last-child {
+            margin-bottom: 0;
+        }
+
+        .inline-link {
+            color: #1f5f8e;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s;
+        }
+
+        .inline-link:hover {
+            border-bottom-color: #1f5f8e;
+        }
+
+        /* ====== FAQ 摘要 ====== */
+        .faq-list {
+            margin-bottom: 2.8rem;
+        }
+
+        .faq-item {
+            padding: 1rem 0;
+            border-bottom: 1px solid #eaeef4;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-q {
+            font-weight: 600;
+            color: #1b2d40;
+            margin-bottom: 0.25rem;
+        }
+
+        .faq-a {
+            color: #43586f;
+            font-size: 0.95rem;
+        }
+
+        /* ====== 底部 ====== */
+        .footer-links {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem 2.2rem;
+            border: 1px solid #e2e8f0;
+            text-align: center;
+            color: #4a5e76;
+            font-size: 0.95rem;
+        }
+
+        .footer-links a {
+            color: #1f5f8e;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links .sep {
+            margin: 0 0.6rem;
+            color: #b6c4d4;
+        }
+
+        /* ====== 响应式 ====== */
+        @media (max-width: 900px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .hero {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 1.6rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+
+            .hero h1 {
+                font-size: 1.7rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        <!-- HERO -->
+        <div class="hero">
+            <h1>世界杯 · 日常参考站</h1>
+            <p class="sub">赛程、分组、历史对照与延伸阅读，为你整合清晰的信息入口。</p>
+            <span class="tagline">⚽ 从查表到闲聊，多一个顺手工具</span>
+        </div>
+
+        <!-- 优势区：三栏 -->
+        <div class="grid-3">
+            <div class="card feature-item">
+                <div class="icon-placeholder">📋</div>
+                <h3>对照更方便</h3>
+                <p>小组赛、淘汰赛阶段时间线，赛果与积分并列展示，不用反复切换页面。</p>
+            </div>
+            <div class="card feature-item">
+                <div class="icon-placeholder">🔍</div>
+                <h3>延伸阅读</h3>
+                <p>每轮过后整理关键数据、冷门与纪录，帮你快速回顾比赛日看点。</p>
+            </div>
+            <div class="card feature-item">
+                <div class="icon-placeholder">🧭</div>
+                <h3>场景化入口</h3>
+                <p>无论是通勤前瞄一眼赛程，还是周末与朋友聊球，信息都摆在顺手的位置。</p>
+            </div>
+        </div>
+
+        <!-- 说明区：日常查询与对照 -->
+        <div class="card explain">
+            <h2 class="section-title">为什么做这样一个页面？</h2>
+            <p>
+                每次大赛期间，我们常常需要在不同网站之间来回跳转——查时间、对分组、看积分、翻纪录。
+                这个页面尝试把最常需要用到的几类信息整合在一起，减少重复查找的步骤。
+            </p>
+            <p>
+                如果你只是想知道某场比赛什么时候踢、某个小组的出线形势如何，或者想对比一下本届与上一届的赛制差异，
+                在这里可以找到清晰的条目。当然，更深入的历史数据、球员统计或战术分析，还是需要借助专业的统计网站。
+            </p>
+            <p>
+                随着比赛推进，页面内容也会进行阶段更新。你可以把它当作一个轻量的参考台，
+                而关于<a href="https://chinese-tv-fifa2026.com" class="inline-link">世界杯</a>的更多官方新闻、转播信息和深度报道，
+                也建议同时关注权威媒体。
+            </p>
+        </div>
+
+        <!-- FAQ 摘要 -->
+        <div class="card faq-list">
+            <h2 class="section-title">常见问题 · 摘要</h2>
+
+            <div class="faq-item">
+                <div class="faq-q">❓ 本届世界杯小组赛出线规则有变化吗？</div>
+                <div class="faq-a">和上届基本一致，每组前两名晋级淘汰赛；若积分相同，先看净胜球、再看进球数。具体细则可以查阅官方文件或在本站「赛制」板块确认。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">❓ 哪里可以看到最新的积分榜和赛果？</div>
+                <div class="faq-a">主页面会汇总每个比赛日之后的积分变动，赛程表也标注了已结束场次的比分。往届数据同样收录在对比表中，方便你进行跨届对照。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">❓ 页面多久更新一次？</div>
+                <div class="faq-a">比赛日期间通常在每轮结束后数小时内更新；非比赛日则保持静态参考状态。如有重大规则调整或赛程变更，也会尽快同步。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-q">❓ 有手机版或者适配方案吗？</div>
+                <div class="faq-a">页面采用响应式布局，手机、平板、桌面均能正常浏览。卡片和表格会根据屏幕宽度自动调整，无需额外缩放。</div>
+            </div>
+        </div>
+
+        <!-- 底部链接 -->
+        <div class="footer-links">
+            <span>关于本站 · 信息仅供参考，请以官方发布为准</span>
+            <br>
+            <span>
+                <a href="https://chinese-tv-fifa2026.com">世界杯</a>
+                <span class="sep">·</span>
+                数据来源：FIFA 官方 · 各大通讯社
+                <span class="sep">·</span>
+                <a href="#">赛程总览</a>
+                <span class="sep">·</span>
+                <a href="#">历史纪录</a>
+            </span>
+            <div style="margin-top: 1rem; font-size: 0.85rem; color: #6d829b;">
+                © 非官方信息聚合 · 日常参考用途
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
